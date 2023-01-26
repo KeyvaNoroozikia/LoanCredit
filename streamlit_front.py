@@ -26,8 +26,7 @@ import base64
 #from sklearn.model_selection import train_test_split
 #from sklearn.preprocessing import MinMaxScaler
 import numpy as np
-#import pickle as pkl
-#import shap
+
 import streamlit.components.v1 as components
 
 """## Mise en place de l'application Streamlit : paramétrage
@@ -40,11 +39,10 @@ import streamlit.components.v1 as components
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
 import pandas as pd
-import pickle
 import streamlit as st
 import json 
 import numpy as np
-import shap
+
 # 
 # 
 # 

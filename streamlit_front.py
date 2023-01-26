@@ -47,10 +47,7 @@ import numpy as np
 # 
 # 
 # 
-st.set_page_config(
-     page_title="Loan Prediction App by Keyvan NOROOZI KIA",
- 
- )
+st.set_page_config(page_title="Loan Prediction App by Keyvan NOROOZI KIA" )
 # 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 # 

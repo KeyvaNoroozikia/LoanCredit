@@ -11,9 +11,9 @@ Original file is located at
 On va mettre en place notre application et notre dashboard via Streamlit, sur lequel on va appliquer notre modèle LightGBM.
 """
 
-!pip install  pyngrok
+pip install  pyngrok
 
-!pip install  streamlit
+pip install  streamlit
 
 #!pip install -q streamlit_ace
 

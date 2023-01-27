@@ -11,7 +11,7 @@ Original file is located at
 On va mettre en place notre application et notre dashboard via Streamlit, sur lequel on va appliquer notre modèle LightGBM.
 """
 
-pip install  pyngrok
+#pip install  pyngrok
 
 #pip install  streamlit
 
@@ -33,11 +33,10 @@ import streamlit.components.v1 as components
 
 """
 
-#!pip install pyngrok
-#!pip install streamlit
+
 
 # Commented out IPython magic to ensure Python compatibility.
-# %%writefile app.py
+%%writefile app.py
 import pandas as pd
 import streamlit as st
 import json 
@@ -57,27 +56,27 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 import requests as re
  
 st.title("Credit Card Fraud Detection Web App")
-# 
-# 
+ 
+ 
 st.write(""" This app is created by Alex Noroozi Kia. It predicts if a customer will be able, or no, to refund his loan """)
-# 
-# 
+ 
+ 
 st.sidebar.header('Input Features of The Transaction')
-# 
+ 
 first_name = st.sidebar.text_input("""Input first name """)
 last_name = st.sidebar.text_input("""Input last name""")
 name_contract_type = st.sidebar.number_input("Contract product type (Cash loan, consumer loan [POS]) of the previous application: Type 0 for a cash loan or 1 for a revolving loan",min_value=0, max_value=3)
 children_count = st.sidebar.number_input("how many children do you have?",min_value=0, max_value=11)
 fam_members = st.sidebar.number_input("how many family members do you have",min_value=0, max_value=15)
-# 
-#     
+ 
+     
 amt_credit_sum = st.sidebar.number_input("What is the amount of credit you want?",min_value=0, max_value=110000)
 DAYS_INSTALMENT_delay = st.sidebar.number_input("""delay since your last credit?""",min_value=0, max_value=1000)
 amt_income_total= st.sidebar.number_input("""Income per year?""",min_value=0, max_value=11000000)
 credit_active= st.sidebar.number_input("""Credit active? put 0 if you don't have any info, 1 if the Credit's closed, 2 if the Credit is active and 3 if it has been sold """,min_value=0, max_value=3)
 bureau_year= st.sidebar.number_input("""bureau_year : Number of enquiries to Credit Bureau about the client one day year (excluding last 3 months before application)""",min_value=0, max_value=20)
-# 
-# 
+ 
+ 
 if st.button("Detection Result"):
      values = {
      "name_contract_type": name_contract_type,

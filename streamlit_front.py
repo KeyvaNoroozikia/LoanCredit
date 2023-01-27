@@ -11,7 +11,7 @@ Original file is located at
 On va mettre en place notre application et notre dashboard via Streamlit, sur lequel on va appliquer notre modèle LightGBM.
 """
 
-#pip install  pyngrok
+!pip install  pyngrok
 
 #pip install  streamlit
 
@@ -89,19 +89,16 @@ if st.button("Detection Result"):
      "amt_credit_sum": amt_credit_sum,
      "bureau_year":bureau_year
      }
-# 
-# 
-# 
+
      res = re.post(f"https://194d-35-204-42-152.ngrok.io/predict",json=values)
      json_str = json.dumps(res.json())
      resp = json.loads(json_str)
-#     
+    
      if first_name=='' or last_name == '':
          st.write("Error! Please input Transaction ID or Names of Sender and Receiver!")
      else:
          st.write(f"{resp[0]}")
-#     
-#
+
 
 """## Installation du tunnel local"""
 

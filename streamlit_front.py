@@ -36,7 +36,7 @@ import streamlit.components.v1 as components
 
 
 # Commented out IPython magic to ensure Python compatibility.
-%%writefile app.py
+#%%writefile app.py
 import pandas as pd
 import streamlit as st
 import json 
@@ -99,22 +99,3 @@ if st.button("Detection Result"):
          st.write(f"{resp[0]}")
 
 
-"""## Installation du tunnel local"""
-
-#!npm install -g localtunnel
-
-"""## Exécution de Streamlit sur colab
-
-"""
-
-#!streamlit run /content/app.py &>/content/logs.txt &
-
-"""
-## Mise en place du tunnel sur le port 8501
-Then just click in the `url` showed.
-
-A `log.txt`file will be created."""
-
-#!npx localtunnel --port 8501
-
-"""[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y3VYYE)"""

@@ -97,5 +97,26 @@ if st.button("Detection Result"):
          st.write("Error! Please input Transaction ID or Names of Sender and Receiver!")
      else:
          st.write(f"{resp[0]}")
+            
+            
+     
+"""## Installation du tunnel local"""
 
+!npm install -g localtunnel
+
+"""## Exécution de Streamlit sur colab
+
+"""
+
+!streamlit run /content/app.py &>/content/logs.txt &
+
+"""
+## Mise en place du tunnel sur le port 8501
+Then just click in the `url` showed.
+
+A `log.txt`file will be created."""
+
+#!npx localtunnel --port 8501
+
+"""[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y3VYYE)"""
 

@@ -30,9 +30,7 @@ import numpy as np
 #import shap
 import streamlit.components.v1 as components
 
-"""## Mise en place de l'application Streamlit : paramétrage
 
-"""
 
 #!pip install pyngrok
 #!pip install streamlit
@@ -64,7 +62,7 @@ st.title("Credit Card Fraud Detection Web App")
 st.write("""
 # About
 This app is created by Alex Noroozi Kia. It predicts if a customer will be able, or no, to 
-refund his loan.
+refund his loan. Please put your inputs on the left side of the page and you will get a prediction.
 """)
 # 
 # 

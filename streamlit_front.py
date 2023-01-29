@@ -102,13 +102,13 @@ if st.button("Detection Result"):
      
 """## Installation du tunnel local"""
 
-!npm install -g localtunnel
+#!npm install -g localtunnel
 
 """## Exécution de Streamlit sur colab
 
 """
 
-!streamlit run /content/app.py &>/content/logs.txt &
+#!streamlit run /content/app.py &>/content/logs.txt &
 
 """
 ## Mise en place du tunnel sur le port 8501

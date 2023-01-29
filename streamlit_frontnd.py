@@ -109,23 +109,4 @@ if st.button("Detection Result"):
 #     
 #
 
-"""## Installation du tunnel local"""
 
-#!npm install -g localtunnel
-
-"""## Exécution de Streamlit sur colab
-
-"""
-
-#!streamlit run /content/app.py &>/content/logs.txt &
-
-"""
-## Mise en place du tunnel sur le port 8501
-Then just click in the `url` showed.
-
-A `log.txt`file will be created."""
-
-#!npx localtunnel --port 8501
-
-"""[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y3VYYE)"""
-# %%

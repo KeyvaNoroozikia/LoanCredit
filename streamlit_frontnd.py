@@ -104,6 +104,42 @@ if st.button("Detection Result"):
          st.write("Error! Please input Transaction ID or Names of Sender and Receiver!")
      else:
          st.write(f"{resp[0]}")
+     #modif
+     import pandas as pd
+     pickle_in = open("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/lgbshap.pkl", "rb") 
+     model = pickle.load(pickle_in)
+ 
+     #prepare test set for shap explainability
+    X_train = pd.read_csv("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/X_train_smtomek_bis.csv")
+    X_test = pd.read_csv("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/X_test_smtomek_bis.csv")
+
+    st.subheader('Result Interpretability - Applicant Level')
+    shap.initjs()
+    explainer = shap.Explainer(model, X_train)
+    user_input=pd.DataFrame.from_dict( {
+    "name_contract_type": [name_contract_type],
+    "children_count": [children_count],
+    "fam_members": [fam_members],
+    "credit_active": [credit_active],
+    "amt_income_total": [amt_income_total],
+    "DAYS_INSTALMENT_delay": [DAYS_INSTALMENT_delay],
+    "amt_credit_sum": [amt_credit_sum],
+    "bureau_year": [bureau_year]
+    }
+    )
+    shap_values = explainer(user_input)
+    fig = shap.plots.bar(shap_values[0])
+    st.pyplot(fig)
+
+    #st.subheader('Model Interpretability - Overall')
+    #shap_values_ttl = explainer(X_test)
+    #fig_ttl = shap.plots.beeswarm(shap_values_ttl)
+    #st.pyplot(fig_ttl)
+    explainer = shap.Explainer(model, X_test)
+    shap_values_ttl = explainer(X_test)
+    fig_ttl = shap.plots.beeswarm(shap_values[0])
+    st.pyplot(fig_ttl)
+    
 #     
 #
 

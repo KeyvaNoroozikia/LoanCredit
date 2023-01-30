@@ -96,7 +96,7 @@ if st.button("Detection Result"):
 # 
 # 
 # 
-     res = re.post(f"https://94d0-34-73-245-194.ngrok.io/predict",json=values)
+     res = re.post(f"https://8bf3-35-196-38-90.ngrok.io/predict",json=values)
      json_str = json.dumps(res.json())
      resp = json.loads(json_str)
 #     

@@ -106,9 +106,9 @@ if st.button("Detection Result"):
          st.write(f"{resp[0]}")
      #modif
      import pandas as pd
-     url_model = (r'https://github.com/KeyvaNoroozikia/LoanCredit/main/lgbshap.pkl')
-     pickle_in = open(url, "rb") 
-     model = pickle.load(pickle_in)
+     #url_model = (r'https://github.com/KeyvaNoroozikia/LoanCredit/main/lgbshap.pkl')
+     #pickle_in = open(url, "rb") 
+     #model = pickle.load(pickle_in)
  
      #prepare test set for shap explainability
      url_train= (r'https://github.com/KeyvaNoroozikia/LoanCredit/main/X_train_smtomek_bis.csv')

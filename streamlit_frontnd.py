@@ -106,8 +106,8 @@ if st.button("Detection Result"):
          st.write(f"{resp[0]}")
      #modif
      import pandas as pd
-     pickle_in = open("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/lgbshap.pkl", "rb") 
-     model = pickle.load(pickle_in)
+     #pickle_in = open("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/lgbshap.pkl", "rb") 
+     #model = pickle.load(pickle_in)
  
      #prepare test set for shap explainability
      X_train = pd.read_csv("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/X_train_smtomek_bis.csv")

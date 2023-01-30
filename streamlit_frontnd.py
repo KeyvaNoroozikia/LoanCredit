@@ -106,12 +106,12 @@ if st.button("Detection Result"):
          st.write(f"{resp[0]}")
      #modif
      import pandas as pd
-     #pickle_in = open("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/lgbshap.pkl", "rb") 
-     #model = pickle.load(pickle_in)
+     pickle_in = open("https://github.com/KeyvaNoroozikia/LoanCredit/main/lgbshap.pkl", "rb") 
+     model = pickle.load(pickle_in)
  
      #prepare test set for shap explainability
-     X_train = pd.read_csv("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/X_train_smtomek_bis.csv")
-     X_test = pd.read_csv("https://github.com/KeyvaNoroozikia/LoanCredit/blob/main/X_test_smtomek_bis.csv")
+     X_train = pd.read_csv("https://github.com/KeyvaNoroozikia/LoanCredit/main/X_train_smtomek_bis.csv")
+     X_test = pd.read_csv("https://github.com/KeyvaNoroozikia/LoanCredit/main/X_test_smtomek_bis.csv")
 
      st.subheader('Result Interpretability - Applicant Level')
      shap.initjs()

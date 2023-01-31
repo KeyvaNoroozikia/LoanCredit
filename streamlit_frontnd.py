@@ -76,9 +76,9 @@ fam_members = st.sidebar.number_input("how many family members do you have",min_
  
      
 amt_credit_sum = st.sidebar.number_input("What is the amount of credit you want?",min_value=0, max_value=110000)
-DAYS_INSTALMENT_delay = st.sidebar.number_input("""delay since your last credit?""",min_value=0, max_value=1000)
+DAYS_INSTALMENT_delay = st.sidebar.number_input("""delay since your last credit?""",min_value=-1000, max_value=10)
 amt_income_total= st.sidebar.number_input("""Income per year?""",min_value=0, max_value=11000000)
-credit_active= st.sidebar.number_input("""Credit active? put 0 if you don't have any info, 1 if the Credit's closed, 2 if the Credit is active and 3 if it has been sold """,min_value=0, max_value=3)
+region_rating= st.sidebar.number_input("""region rating from 1 to 3 """,min_value=1, max_value=3)
 bureau_year= st.sidebar.number_input("""bureau_year : Number of enquiries to Credit Bureau about the client one day year (excluding last 3 months before application)""",min_value=0, max_value=20)
 # 
 # 
@@ -87,7 +87,7 @@ if st.button("Detection Result"):
      "name_contract_type": name_contract_type,
      "children_count": children_count,
      "fam_members": fam_members,
-     "credit_active": credit_active,
+     "region_rating": region_rating,
      "amt_income_total": amt_income_total,
      "DAYS_INSTALMENT_delay": DAYS_INSTALMENT_delay,
      "amt_credit_sum": amt_credit_sum,

@@ -18,14 +18,7 @@ On va mettre en place notre application et notre dashboard via Streamlit, sur le
 #!pip install -q streamlit_ace
 
 #pip install shap
-use_colab = True 
 
-if use_colab:
-    from google.colab import drive
-    drive.mount('/content/drive')
-    PATH ='/content/drive/MyDrive/'
-else:
-    PATH ='/data/'
 import streamlit as st
 import pandas as pd
 import base64

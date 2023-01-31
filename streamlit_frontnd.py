@@ -96,7 +96,7 @@ if st.button("Detection Result"):
 # 
 # 
 # 
-     res = re.post(f"https://8bf3-35-196-38-90.ngrok.io/predict",json=values)
+     res = re.post(f"https://78ac-34-80-29-180.ngrok.io/predict",json=values)
      json_str = json.dumps(res.json())
      resp = json.loads(json_str)
 #     
@@ -112,9 +112,16 @@ if st.button("Detection Result"):
  
      #prepare test set for shap explainability
      url_train= (r'https://github.com/KeyvaNoroozikia/LoanCredit/main/X_train_smtomek_bis.csv')
-     X_train = pd.read_csv(url_train)
+     download = requests.get(url_train).content
+
+     # Reading the downloaded content and turning it into a pandas dataframe
+
+     X_train = pd.read_csv(io.StringIO(download.decode('utf-8')))
+     
+    
      url_test= (r'https://github.com/KeyvaNoroozikia/LoanCredit/main/X_test_smtomek_bis.csv')
-     X_test = pd.read_csv(url_test)
+     download = requests.get(url_test).content
+     X_test = pd.read_csv(io.StringIO(download.decode('utf-8')))
 
      st.subheader('Result Interpretability - Applicant Level')
      shap.initjs()

@@ -122,18 +122,18 @@ if st.button("Detection Result"):
      # Reading the downloaded content and turning it into a pandas dataframe
      @st.cache
      def get_traindata():
-     URL = "https://github.com/KeyvaNoroozikia/LoanCredit/main/X_train_smtomek_bis.csv"
-     train = pd.read_csv(URL)
-     return train
+        URL = "https://github.com/KeyvaNoroozikia/LoanCredit/main/X_train_smtomek_bis.csv"
+        train = pd.read_csv(URL)
+        return train
      
      get_traindata()
     
     
      @st.cache
      def get_testdata():
-     URL = "https://github.com/KeyvaNoroozikia/LoanCredit/main/X_test_smtomek_bis.csv"
-     test = pd.read_csv(URL)
-     return test
+        URL = "https://github.com/KeyvaNoroozikia/LoanCredit/main/X_test_smtomek_bis.csv"
+        test = pd.read_csv(URL)
+        return test
      
      get_testdata()
 

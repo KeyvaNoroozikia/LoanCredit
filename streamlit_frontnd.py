@@ -18,7 +18,14 @@ On va mettre en place notre application et notre dashboard via Streamlit, sur le
 #!pip install -q streamlit_ace
 
 #pip install shap
+use_colab = True 
 
+if use_colab:
+    from google.colab import drive
+    drive.mount('/content/drive')
+    PATH ='/content/drive/MyDrive/'
+else:
+    PATH ='/data/'
 import streamlit as st
 import pandas as pd
 import base64
@@ -96,7 +103,7 @@ if st.button("Detection Result"):
 # 
 # 
 # 
-     res = re.post(f"https://78ac-34-80-29-180.ngrok.io/predict",json=values)
+     res = re.post(f"https://a351-34-80-226-165.ngrok.io/predict",json=values)
      json_str = json.dumps(res.json())
      resp = json.loads(json_str)
 #     
@@ -110,18 +117,27 @@ if st.button("Detection Result"):
      #pickle_in = open(url, "rb") 
      #model = pickle.load(pickle_in)
  
-     #prepare test set for shap explainability
-     url_train= (r'https://github.com/KeyvaNoroozikia/LoanCredit/main/X_train_smtomek_bis.csv')
-     download = requests.get(url_train).content
+     
 
      # Reading the downloaded content and turning it into a pandas dataframe
-
-     X_train = pd.read_csv(io.StringIO(download.decode('utf-8')))
+     @st.cache
+     def get_traindata():
+     URL = "https://github.com/KeyvaNoroozikia/LoanCredit/main/X_train_smtomek_bis.csv"
+     train = pd.read_csv(URL)
+     return train
      
+     get_traindata()
     
-     url_test= (r'https://github.com/KeyvaNoroozikia/LoanCredit/main/X_test_smtomek_bis.csv')
-     download = requests.get(url_test).content
-     X_test = pd.read_csv(io.StringIO(download.decode('utf-8')))
+    
+     @st.cache
+     def get_testdata():
+     URL = "https://github.com/KeyvaNoroozikia/LoanCredit/main/X_test_smtomek_bis.csv"
+     test = pd.read_csv(URL)
+     return test
+     
+     get_testdata()
+
+    
 
      st.subheader('Result Interpretability - Applicant Level')
      shap.initjs()
